@@ -17,7 +17,7 @@ Ankit Dhall and Yash Chandak
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <iostream>
-#include "opencv2/imgproc/imgproc.hpp"
+#include <opencv2/imgproc/imgproc.hpp>
 #include <math.h>
 #include <queue>
 #include <time.h>
@@ -298,7 +298,7 @@ void crop(Mat combined, Mat original)
     int minx, maxx, miny, maxy;
 
     queue<Point> Q;
-    cvtColor(combined, combined, CV_BGR2HSV);
+    cvtColor(combined, combined, COLOR_BGR2HSV);
     ///convert the image to HSV space
     for(int i = 0; i<COLS; ++i)
     {
@@ -375,11 +375,9 @@ void crop(Mat combined, Mat original)
     imshow("finalll", original);
     waitKey(0);
 }
-
-int main()
-{
+int main(int argc, char* argv[]){
     //Mat image= imread("C:/Users/student/Desktop/DIP/Sample Pictures/cr.jpg",1);
-    Mat image= imread("a.jpg",1);
+    Mat image= imread(argv[1],1);
     hist(image);
     //imwrite("originalImage.jpg",image);
 
@@ -393,7 +391,7 @@ int main()
     //pair<Mat, vector<pair<pair<Point, Vec3b> ,int > > >retVal=
     Mat combined = colSeg(image, winSize);
     crop(combined, image);
-
+    imwrite( "/opt/outputimage/outpara.jpg", combined);
     waitKey(0);
     return 0;
 }

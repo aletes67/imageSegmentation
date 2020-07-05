@@ -36,7 +36,7 @@ Mat colSeg(Mat image, int winSize)//color segmentation only pair<Mat, vector<pai
     Mat segm(ROWS, COLS, CV_8UC3, 0.0);
 
     medianBlur(image,image,5);//blur image
-    cvtColor(image, img, CV_BGR2HSV);//change color space BGR to HSV
+    cvtColor(image, img, COLOR_BGR2HSV);//change color space BGR to HSV
 
     int bins=40;//minimum segments
     int maxBins=100;//max segments, should be less than 250

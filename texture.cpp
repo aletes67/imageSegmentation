@@ -98,7 +98,7 @@ void printAtan()//prints atan (for verification)
 Mat generateGradient(Mat img)//generates gradient for each pixel
 {
     Mat image(img.rows, img.cols, CV_8UC1,0.0);
-    cvtColor(img, image,CV_RGB2GRAY);
+    cvtColor(img, image,COLOR_RGB2GRAY);
     Mat gradient(image.rows, image.cols, CV_8UC1, 255.0);
     Mat gradVal(img.rows, img.cols, CV_8UC1,0.0);
 

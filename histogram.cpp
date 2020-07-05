@@ -82,7 +82,7 @@ void hist(Mat src)
     float var=mu2-(mu1*mu1);
     var/=100;
     /// Display
-    namedWindow("calcHist Demo", CV_WINDOW_AUTOSIZE );
+    namedWindow("calcHist Demo", WINDOW_AUTOSIZE );
     imshow("calcHist Demo", histImage );
 
     cout<<"Var:"<<var<<endl;
